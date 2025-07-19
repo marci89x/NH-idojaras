@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Marci TV Dashboard</title>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    #clock {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+    img {
+      max-width: 200px;
+      margin-bottom: 20px;
+    }
+    iframe {
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="Marci Logó">
+  <div id="clock"></div>
+  <iframe src="https://forecast7.com/en/47d08n17d72/nagyvazsony/" width="100%" height="200"></iframe>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString();
+      document.getElementById('clock').innerText = time;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
